@@ -1,0 +1,24 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">人民币提现</p>
+</div>
+<div class="cell-list">
+  <div class="list-item">
+    <span class="span-title">
+      提现金额
+    </span>
+  <input type="number" placeholder="请输入提现金额" [(ngModel)]="liftScale">
+  </div>
+</div>
+<p class="tips">
+  <span>
+    账户余额：{{backableScale}} 元
+  </span>
+  <span>
+    <!-- 手续费：1 元 -->
+  </span>
+</p>
+
+<div class="bottom-btn" style="margin-top:20px;">
+  <div class="main" (click)='withdraw()'>申请提取</div>
+</div>

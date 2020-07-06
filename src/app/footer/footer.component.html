@@ -1,0 +1,11 @@
+<div class="footer1" id="footer1">
+  <div class="small-footer">
+    <div *ngFor='let a of menuList' class="footer-div {{url === a.id?'icon-active':''}}" (click)='goto(a.id)'>
+      <div class="icon {{a.class}}"></div>
+      <p>
+        {{a.name}}
+      </p>
+    </div>
+  </div>
+  <div *ngIf="tiao" class="fix-iphonex-bottom"></div>
+</div>

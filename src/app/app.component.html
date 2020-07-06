@@ -1,0 +1,12 @@
+<div >
+  <!--路由出口 start-->
+  <router-outlet></router-outlet>
+  <!--路由出口 end-->
+</div>
+
+<div class="alert-bg" *ngIf='alert'>
+  <app-alert></app-alert>
+</div>
+<div class="loading" *ngIf='loading'>
+  <app-loading></app-loading>
+</div>

@@ -1,0 +1,112 @@
+<div class="boxbox">
+    <div class="user-center-top">
+        <div class="user-center-header">
+            <img class="user-who" src="./assets/images/who.png" />
+            <div class="user-name">{{userInfo.accountName}}</div>
+            <img class="user-close" src="./assets/images/close.png" (click)='logout()' />
+            <div class="logout-box" (click)='logout()'>退出账户</div>
+        </div>
+        <div class="funds-container">
+            <div class="total-assets">
+                <div class="title">总资产</div>
+                <!-- <div class="in-out">
+        <span (click)='goto2(menuList[2].id)'>入金</span>
+        <span (click)='goto2(menuList[3].id)'>出金</span>
+      </div> -->
+            </div>
+            <div class="total-assets-amount">{{userInfo.totalScale | round4}}</div>
+            <div class="funds-list">
+                <div class="funds-item">
+                    <div>持仓权益</div>
+                    <div class="funds-amount">{{userInfo.stockScale | round4}}</div>
+                </div>
+                <div class="funds-item">
+                    <div>冻结资金</div>
+                    <div class="funds-amount">{{freezaFee | round4}}</div>
+                </div>
+                <div class="funds-item">
+                    <div>可用资金</div>
+                    <div class="funds-amount">{{userInfo.ableScale | round4}}</div>
+                </div>
+                <div class="funds-item">
+                    <div>实际可用</div>
+                    <div class="funds-amount">{{userInfo.limitAbleScale | round4}}</div>
+                </div>
+                <div class="funds-item">
+                    <div>初期规模</div>
+                    <div class="funds-amount">{{userInfo.allottedScale | round4}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="account-balance">
+        <div class="account-balance-top">
+            <div class="title">
+                <span>账户余额</span>
+                <span class="balance">{{userInfo.balance | round4}}</span>
+            </div>
+            <div class="funds-operate">
+                <div (click)='goto2(menuList[1].id)'>充值</div>
+                <div (click)='goto2(menuList[0].id)'>提现</div>
+            </div>
+        </div>
+    </div>
+    <div style="height:20px;background-color:#fff;overflow: hidden;"></div>
+    <div class="zhanbi">
+        <div class="btitle">资金占比</div>
+        <div class="tbox">
+            <div class="ltbox">
+                <div echarts [options]="option" class="chart"></div>
+                <div class="zzb">
+                    <span style="font-size:12px;">总资产</span>
+                    <br />
+                    <b style="font-size:16px">100%</b>
+                </div>
+            </div>
+            <div class="rtbox">
+                <div class="zb">
+                    <span class="s s1"></span>证券市值{{anum}}</div>
+                <div class="zb">
+                    <span class="s s2"></span>可用资金{{bnum}}</div>
+                <div class="zb">
+                    <span class="s s3"></span>冻结资金{{cnum}}</div>
+            </div>
+        </div>
+    </div>
+    <div class="user-center-bottom">
+        <div class="morething">更多功能</div>
+        <div class="box box1">
+            <div (click)='userDetail()'>
+                <img src="./assets/images/userCenter/financing _details.png" />
+                <div>个人详情</div>
+            </div>
+            <div (click)='goto2(menuList[4].id)'>
+                <img src="./assets/images/userCenter/capital_flow.png" />
+                <div>资金流水</div>
+            </div>
+            <div (click)='goto1("card")'>
+                <img src="./assets/images/userCenter/bank_card.png" />
+                <div>银行卡修改</div>
+            </div>
+            <div *ngIf="allottedScale !== '0'" (click)='submit()'>
+                <img src="./assets/images/userCenter/close_case.png" />
+                <div>结案</div>
+            </div>
+            <div (click)='goto1("resetPwd")'>
+                <img src="./assets/images/userCenter/change_pwd.png" />
+                <div>修改密码</div>
+            </div>
+        </div>
+        <!-- <div class="box box2">
+        <div *ngIf="allottedScale !== '0'" (click)='submit()'>
+            <img src="./assets/images/userCenter/close_case.png" />
+            <div>结案</div>
+        </div>
+        <div (click)='goto1("resetPwd")'>
+            <img src="./assets/images/userCenter/change_pwd.png" />
+            <div>修改密码</div>
+        </div>
+        <div></div>
+    </div> -->
+    </div>
+</div>

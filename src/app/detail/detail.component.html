@@ -1,0 +1,105 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">交易详情</p>
+</div>
+<div class="content">
+  <div class="cell-list">
+    <div class="list-item">
+      <span class="list-item-name">
+        股票名称
+      </span>
+      <span class="list-item-content">
+        {{detail.stockName}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        股票代码
+      </span>
+      <span class="list-item-content">
+        {{detail.stockCode}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        买卖方向
+      </span>
+      <span class="list-item-content">
+        {{detail.appointTypeDesc}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        标志
+      </span>
+      <span class="list-item-content">
+        {{detail.appointStatusDesc}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        时间
+      </span>
+      <span class="list-item-content">
+        {{detail.appointTime}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        委托价
+      </span>
+      <span class="list-item-content">
+        {{detail.appointPrice}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        成交价
+      </span>
+      <span class="list-item-content">
+        {{detail.dealAvrPrice}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        委托量
+      </span>
+      <span class="list-item-content">
+        {{detail.appointCnt}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        成交量
+      </span>
+      <span class="list-item-content">
+        {{detail.dealCnt}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        手续费
+      </span>
+      <span class="list-item-content">
+        {{detail.commission}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        成交金额
+      </span>
+      <span class="list-item-content">
+        {{detail.dealAmount}}
+      </span>
+    </div>
+    <div class="list-item">
+      <span class="list-item-name">
+        发生金额
+      </span>
+      <span class="list-item-content">
+        {{detail.happenAmount}}
+      </span>
+    </div>
+
+  </div>
+</div>

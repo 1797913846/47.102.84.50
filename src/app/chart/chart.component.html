@@ -1,0 +1,154 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p>{{staticData.stockName}}</p>
+  <p>
+    {{stockCode}}
+  </p>
+</div>
+<div class="chart-content">
+  <div class="head">
+    <div class="chart-head">
+      <div class="head1">
+        <div style="color:#C80005;margin-top: 10px;text-align: left;padding-left: 20px;">
+          <span class="head-span">{{stockHQ.lastPrice | round4}}</span>
+          <span [class]='color(stockHQ.upDiff)' style="margin:0 10px;">
+            {{stockHQ.upDiff}}
+          </span>
+          <span [class]='color(stockHQ.upRatio)'>
+            {{stockHQ.upRatio}}
+          </span>
+          <p style="color:#333;margin-top: 7px;">
+            交易时间：09:30-11:30 13:00-14:57
+          </p>
+        </div>
+      </div>
+      <div class="head2">
+        <p>
+          高
+        </p>
+        <p>
+          {{stockHQ.highPrice | round4}}
+        </p>
+        <p>
+          低
+        </p>
+        <p>
+          {{stockHQ.lowPrice | round4}}
+        </p>
+      </div>
+      <div class="head2">
+        <p>
+          今开
+        </p>
+        <p>
+          {{stockHQ.openPrice | round4}}
+        </p>
+        <p>
+          昨收
+        </p>
+        <p>
+          {{staticData.preClosePrice | round4}}
+        </p>
+      </div>
+    </div>
+    <!-- <div class="chart-head2">
+      <div>
+        <span>最高</span>
+        <span>{{stockHQ.highPrice | round4}}</span>
+        <span>剩余天数</span>
+        <span>{{staticData.leftDays}}</span>
+        <span>行权价格</span>
+        <span>{{staticData.exercisePrice}}</span>
+      </div>
+      <div>
+        <span>最低</span>
+        <span>{{stockHQ.lowPrice | round4}}</span>
+        <span>行权日</span>
+        <span>{{staticData.exerciseDate}}</span>
+        <span>合约单位</span>
+        <span>10000</span>
+      </div>
+    </div> -->
+  </div>
+  <div class="fenshi-div2" style='margin-top:8px;'>
+    <p class="shifen2">
+      <span *ngFor="let item of chartTypeList" [class]='item.type == chartType?"active":""' (click)='changeType(item.type)'>{{item.name}}</span>
+    </p>
+    <!-- <canvas style="margin-left:10px;" id="trendLine"></canvas> -->
+    <!--图表 start-->
+    <div id="chart" style="background: #fff;"></div>
+    <!--图表 end-->
+  </div>
+
+  <div class="right-div">
+    <div>
+      <div class="right-title">
+        卖盘档
+      </div>
+      <p>
+        <span>卖1</span>
+        <span class="{{HQColor(stockHQ.sellLevel.sellPrice01)}}">{{stockHQ.sellLevel.sellPrice01 | round4}}</span>
+        <span>{{stockHQ.sellLevel.sellVolume01 | numInt }}</span>
+      </p>
+      <p>
+        <span>卖2</span>
+        <span class="{{HQColor(stockHQ.sellLevel.sellPrice02)}}">{{stockHQ.sellLevel.sellPrice02 | round4}}</span>
+        <span>{{stockHQ.sellLevel.sellVolume02 | numInt }}</span>
+      </p>
+      <p>
+        <span>卖3</span>
+        <span class="{{HQColor(stockHQ.sellLevel.sellPrice03)}}">{{stockHQ.sellLevel.sellPrice03 | round4}}</span>
+        <span>{{stockHQ.sellLevel.sellVolume03 | numInt }}</span>
+      </p>
+      <p>
+        <span>卖4</span>
+        <span class="{{HQColor(stockHQ.sellLevel.sellPrice04)}}">{{stockHQ.sellLevel.sellPrice04 | round4}}</span>
+        <span>{{stockHQ.sellLevel.sellVolume04 | numInt }}</span>
+      </p>
+      <p>
+        <span>卖5</span>
+        <span class="{{HQColor(stockHQ.sellLevel.sellPrice05)}}">{{stockHQ.sellLevel.sellPrice05 | round4}}</span>
+        <span>{{stockHQ.sellLevel.sellVolume05 | numInt }}</span>
+      </p>
+    </div>
+    <div>
+      <div class="right-title">
+        买盘档
+      </div>
+      <p>
+        <span>买1</span>
+        <span class="{{HQColor(stockHQ.buyLevel.buyPrice01)}}">{{stockHQ.buyLevel.buyPrice01 | round4}}</span>
+        <span>{{stockHQ.buyLevel.buyVolume01 | numInt }}</span>
+      </p>
+      <p>
+        <span>买2</span>
+        <span class="{{HQColor(stockHQ.buyLevel.buyPrice02)}}">{{stockHQ.buyLevel.buyPrice02 | round4}}</span>
+        <span>{{stockHQ.buyLevel.buyVolume02 | numInt }}</span>
+      </p>
+      <p>
+        <span>买3</span>
+        <span class="{{HQColor(stockHQ.buyLevel.buyPrice03)}}">{{stockHQ.buyLevel.buyPrice03 | round4}}</span>
+        <span>{{stockHQ.buyLevel.buyVolume03 | numInt }}</span>
+      </p>
+      <p>
+        <span>买4</span>
+        <span class="{{HQColor(stockHQ.buyLevel.buyPrice04)}}">{{stockHQ.buyLevel.buyPrice04 | round4}}</span>
+        <span>{{stockHQ.buyLevel.buyVolume04 | numInt }}</span>
+      </p>
+      <p>
+        <span>买5</span>
+        <span class="{{HQColor(stockHQ.buyLevel.buyPrice05)}}">{{stockHQ.buyLevel.buyPrice05 | round4}}</span>
+        <span>{{stockHQ.buyLevel.buyVolume05 | numInt }}</span>
+      </p>
+    </div>
+  </div>
+  <div class="bottom-btn-now">
+    <div class="bottom-btn">
+      <button (click)='goto("buy")'>买入</button>
+      <button (click)='goto("sell")'>卖出</button>
+    </div>
+    <div *ngIf="tiao" class="fix-iphonex-bottom"></div>
+  </div>
+
+
+</div>

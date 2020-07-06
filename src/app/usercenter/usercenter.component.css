@@ -1,0 +1,283 @@
+.user-center-top {
+  width: 100%;
+  height: 254px;
+  background-size: 100% 205px;
+  background-color: #fff;
+}
+
+.user-center-header {
+  overflow: hidden;
+  padding: 0 26px 0 37px;
+  line-height: 40px;
+  font-size: 12px;
+  color: #FFFFFF;
+}
+
+.user-who {
+  float: left;
+  width: 16px;
+  height: 16px;
+  margin-top: 13px;
+  margin-right: 10px;
+}
+
+.user-name {
+  float: left;
+  color: #343434;
+  font-weight: bold;
+}
+
+.logout-box {
+  float: right;
+  color: #343434;
+  font-size: 12px;
+}
+
+.user-close {
+  float: right;
+  width: 14px;
+  margin-top: 13px;
+  margin-left: 10px;
+}
+
+.funds-container {
+  width: 355px;
+  height: 204px;
+  margin: 0 auto;
+  background-size: 100% 100%;
+  padding: 21px 25px 0;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.funds-container .total-assets {
+  line-height: 25px;
+  overflow: hidden;
+}
+
+.funds-container .total-assets .title {
+  float: left;
+  color: #333333;
+  font-size: 15px;
+}
+
+.funds-container .total-assets .in-out {
+  float: right;
+}
+
+.funds-container .total-assets .in-out span {
+  display: inline-block;
+  height: 25px;
+  margin-left: 12px;
+  font-weight: bold;
+  color: #C80005;
+  font-size: 12px;
+  text-decoration: underline;
+}
+
+.funds-container .total-assets-amount {
+  font-weight: bold;
+  color: #C80005;
+  font-size: 23px;
+  margin-bottom: 23px;
+}
+
+.funds-container .funds-list {
+  overflow: hidden;
+}
+
+.funds-container .funds-list .funds-item {
+  float: left;
+  width: 77px;
+  margin: 0 35px 12px 0;
+  color: #8E9399;
+  font-size: 12px;
+}
+
+.funds-container .funds-list .funds-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.funds-container .funds-list .funds-amount {
+  font-weight: bold;
+  color: #5B5B65;
+  font-size: 14px;
+}
+
+.account-balance {
+  width: 100%;
+  height: 57px;
+  background-color: #fff;
+  margin-bottom: 6px;
+}
+
+.account-balance-top {
+  height: 22px;
+  line-height: 22px;
+  padding: 14px 16px 0;
+}
+
+.account-balance-top .title {
+  float: left;
+  color: #333333;
+  font-size: 12px;
+}
+
+.account-balance-top .balance {
+  display: inline-block;
+  margin-left: 18px;
+  font-weight: bold;
+  color: #C80005;
+  font-size: 15px;
+}
+
+.account-balance-top .funds-operate {
+  float: right;
+}
+
+.account-balance-top .funds-operate div {
+  float: left;
+  width: 38px;
+  height: 22px;
+  line-height: 22px;
+  text-align: center;
+  background-color: #C80005;
+  border-radius: 2px;
+  margin-left: 8px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.user-center-bottom {
+  width: 100%;
+  color: #666666;
+  font-size: 12px;
+  background-color: #fff;
+  min-height: 300px;
+}
+
+.user-center-bottom .box1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.user-center-bottom .box2 {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-center-bottom .box1>div {
+  width: 25%;
+  height: 85px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.morething {
+  border-left: 5px solid #C80005;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 15px;
+  color: #333333;
+  margin-left: 15px;
+}
+
+.user-center-bottom .box2>div {
+  width: 33.333333333333333333333333333333333333%;
+  height: 85px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-center-bottom .box2>div:last-child {
+  margin-right: 0px;
+}
+
+.user-center-bottom img {
+  width: 24px;
+}
+
+.zhanbi {
+  background-color: #fff;
+  padding-bottom: 40px;
+}
+
+.zhanbi .btitle {
+  border-left: 5px solid #C80005;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 15px;
+  color: #333333;
+  margin-left: 15px;
+}
+
+.zhanbi .tbox {
+  overflow: hidden;
+  margin-left: 62px;
+  margin-right: 62px;
+  margin-top: 20px;
+}
+
+.zhanbi .tbox .ltbox {
+  float: left;
+  margin-top: 20px;
+  position: relative;
+}
+
+.zhanbi .tbox .ltbox .zzb {
+  position: absolute;
+  left: 27%;
+  top: 30%;
+}
+
+.zhanbi .tbox .rtbox {
+  float: right;
+  margin-top: 40px;
+}
+
+.zhanbi .tbox .rtbox .zb {
+  font-size: 12px;
+  color: #333333;
+  height: 24px;
+  line-height: 24px;
+}
+
+.zhanbi .tbox .rtbox .s {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 12px;
+}
+
+.zhanbi .tbox .rtbox .s1 {
+  background-color: #0064B9;
+}
+
+.zhanbi .tbox .rtbox .s2 {
+  background-color: #C80005;
+}
+
+.zhanbi .tbox .rtbox .s3 {
+  background-color: #FCC257;
+}
+
+.chart {
+  width: 90px;
+  height: 90px;
+}
+
+.boxbox {
+  height: 100vh;
+  overflow-y: scroll;
+}

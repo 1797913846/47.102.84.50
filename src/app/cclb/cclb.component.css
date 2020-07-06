@@ -1,0 +1,69 @@
+.cclb {
+    background: #fff;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.cclb table {
+    width: 100%;
+    text-align: center;
+    color: #5A5B65;
+    font-size: 12px;
+}
+
+.cclb table tr {
+    height: 60px;
+}
+
+.cclb table tr:first-child {
+    height: 40px;
+    color: #5B5F65;
+}
+
+.cclb table tr:nth-child(2n) {
+    background-color: #F9F9F9
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: #F05330;
+}
+
+.bList {
+    display: flex;
+    text-align: center;
+    width: 100vw;
+    background: #fff;
+    padding: 8px;
+    border-bottom: 1px solid rgb(246, 246, 246);
+}
+
+.bList .footer-div {
+    flex: 1;
+    padding: 0 0 9px;
+    position: relative;
+}
+
+.bList .footer-div p {
+    font-weight: bold;
+    color: #5B5F65;
+    font-size: 12px;
+}
+
+.bList .footer-div-active p {
+    color: #5473FF;
+}
+
+.bList .footer-div-active::after {
+    content: "";
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #5473FF;
+    position: absolute;
+    left: 44%;
+    bottom: 0px;
+}

@@ -1,0 +1,12 @@
+.copy {
+  display: inline-block;
+  width: 46px;
+  text-align: center;
+  height: 23px;
+  line-height: 23px;
+  background: #C80005;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 13px;
+}

@@ -1,0 +1,19 @@
+.submit {
+  display: block;
+  width: 90vw;
+  height: 45px;
+  line-height: 45px;
+  text-align: center;
+  background: #C80005;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  margin: 1rem auto 20px;
+  border: none;
+}
+
+.content {
+  height: calc(100vh - 198px);
+  overflow-y: auto;
+}

@@ -1,0 +1,32 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">出金</p>
+</div>
+<div class="cell-list">
+  <div class="list-item">
+    <span class="span-title">
+      出金类型
+    </span>
+    <select [(ngModel)]="reduceScale" (change)='change()'>
+      <option value="false">提盈</option>
+      <option value="true">保证金</option>
+    </select>
+    <img src="./assets/images/right.png" class="right-icon" alt="">
+  </div>
+  <!-- <div class="list-item" *ngIf="reduceScale === 'true'">
+    <span class="span-title">
+      减少保证金
+    </span>
+    <input placeholder="可出保证金{{cashScale}}" maxlength="18" type="number" [(ngModel)]="reCashScale">
+  </div> -->
+  <div class="list-item">
+    <span class="span-title">
+      出金金额
+    </span>
+    <input placeholder="{{cashScale2}}元" maxlength="18" type="number" [(ngModel)]="amount">
+  </div>
+</div>
+
+<div class="bottom-btn" style="margin-top:20px;">
+  <div class="main" (click)='submit()'>确认</div>
+</div>

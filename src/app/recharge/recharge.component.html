@@ -1,0 +1,47 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">充值</p>
+</div>
+<div class="rechange">
+  <p class="title">
+    请选择充值金额
+  </p>
+  <div class="money-div">
+    <div [class]="money == item?'active-recharge':''" *ngFor="let item of list" (click)='select(item)'>
+      {{item}}元
+    </div>
+    <div>
+      <input class="recharge-input" type="number" style="font-size:14px;" placeholder="输入充值金额" (keyup)='input()'
+        [(ngModel)]="inputMoney">
+    </div>
+  </div>
+  <div class="pay-way" (click)='selectPayType(item.index)' *ngFor="let item of payWayConfig">
+    <img src="./assets/images/{{item.pic}}.png" alt="">
+    <span>{{item.name}}</span> <span class="red" *ngIf="item.fee !== ''">(手续费{{item.fee}})</span>
+    <div class="radio {{payType == item.index?'':'radio-none'}}"></div>
+  </div>
+  <div class="bottom-btn recharge-bottom" style="margin-top:20px;">
+    <div class="main" (click)='pay()'>确定</div>
+  </div>
+  <div class='text'>
+    <p>
+      【温馨提示】
+    </p>
+    <p>
+      1、为了保障您的账户安全，首次充值前请完成实名认证绑定
+    </p>
+    <p>
+      2、银行卡转账：可使用手机网银、电脑网银、银行柜台或ATM机转账等方式，因手机网银限额问题，当日转账大于5万时，请使用电脑网银U盾。
+      操作流程：提交充值→复制收款方银行卡号及备注等信息→完成线下转账→等待审核到账
+    </p>
+    <p>
+      3、支付宝转账：单笔限额5万
+    </p>
+    <p>
+      操作流程：提交充值→复制收款方支付宝账号及备注等信息→完成线下转账→等待审核到账
+    </p>
+    <p>
+      4、说明：提交充值后请尽快完成转账，系统将在10分钟内完成审核，超时未完成请重新发起即可
+    </p>
+  </div>
+</div>

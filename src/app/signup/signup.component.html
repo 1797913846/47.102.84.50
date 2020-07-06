@@ -1,0 +1,34 @@
+<div class="login-div" style="padding-bottom:40px;">
+  <div class="input-div">
+    <p class="title">{{type == 'signup'?'注册':'找回密码'}}</p>
+    <p class="smalltitle">Welcome to {{type == 'signup'?'signup':'retrieve password'}}</p>
+    <div class="login-input " *ngIf="type == 'signup'">
+      <input type="text" placeholder="姓名" maxlength="11" [(ngModel)]='userName'>
+    </div>
+    <div class="login-input">
+      <input type="text" placeholder="手机号码" maxlength="11" [(ngModel)]='phone'>
+    </div>
+    <div class="login-input">
+      <input class="code-input" type="text" placeholder="验证码" [(ngModel)]='code'>
+      <button class="code-btn" (click)='getCode()' [disabled]='time != 60'>
+        {{text}}
+      </button>
+    </div>
+    <div class="login-input">
+      <input type="password" placeholder="密码" [(ngModel)]='password'>
+    </div>
+    <!--183环境的不要的 <div class="login-input" *ngIf="type == 'signup'">
+      <input type="text" placeholder="邀请码" [(ngModel)]='inviteCode'>
+    </div> -->
+    <div class="login-input" *ngIf="type == 'signup'">
+      <input type="text" placeholder="邀请码" [(ngModel)]='inviteCode'>
+    </div>
+    <p class="book" *ngIf="type == 'signup'">
+      注册即视为同意：《 <a (click)='book()'>风险揭示书</a> 》
+    </p>
+    <button class="login-btn" (click)='submit()'>{{type == 'signup'?'注册':'确定'}}</button>
+    <div class="signup-div" *ngIf="type == 'signup'">
+      <span (click)='goto()'>已有账号？去登录</span>
+    </div>
+  </div>
+</div>

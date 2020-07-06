@@ -1,0 +1,60 @@
+<div class="cclb">
+  <!-- <div class="bList">
+    <div *ngFor='let b of bList' class="footer-div {{url1 === b.id?'footer-div-active':''}}" (click)='gotob(b.id)'>
+      <p>
+        {{b.name}}
+      </p>
+    </div>
+  </div> -->
+  <table cellspacing="0">
+    <tr>
+      <td>
+        名称
+      </td>
+      <td>
+        参考盈亏/市值
+      </td>
+      <td>
+        持仓/可用
+      </td>
+      <td>
+        参考成本/现价
+      </td>
+      <td>
+        浮动盈亏
+      </td>
+    </tr>
+    <tr *ngFor='let a of list' (click)='select(a)'>
+      <td>
+        <p style="font-weight:bold;font-size:14px;">{{a.stockName}}</p>
+        <p style="color: #999999; font-size: 10px;">{{a.stockCode}}</p>
+      </td>
+      <td class="{{a.profit < 0?'green':'red'}}">
+        <p>{{a.profit | round4}}</p>
+        <p>{{a.stockCnt * a.lastPrice | round4}}</p>
+      </td>
+      <td style="color: #5A5B65; font-size: 12px;">
+        <p>
+          {{a.stockCnt}}
+        </p>
+        <p>
+          {{a.stockCntAble}}
+        </p>
+      </td>
+      <td style="color: #5A5B65; font-size: 12px;">
+        <p>
+          {{a.costPrice | round4}}
+        </p>
+        <p>
+          {{a.lastPrice | round4}}
+        </p>
+      </td>
+      <!--参考盈亏/(持仓*参考成本)-->
+      <td class="{{a.profit < 0?'green':'red'}}">
+        <p>{{a.profit}}</p>
+        <p *ngIf="a.costPrice>0">{{(a.profit /(a.stockCnt*a.costPrice))*100 | round4}}%</p>
+        <p *ngIf="a.costPrice<=0">--</p>
+      </td>
+    </tr>
+  </table>
+</div>

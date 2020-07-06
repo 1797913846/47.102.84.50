@@ -1,0 +1,104 @@
+.close{
+    font-size: 1rem;
+    right: 20px;
+    position: fixed;
+}
+
+.search-bar{
+    display: flex;
+    width: 100vw;
+    background-color: #fff;
+}
+
+.search-bar div{
+    width: 303px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: #F5F5F5;
+    margin: 10px;
+}
+
+.search-bar div input{
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    padding: 0 20px;
+    font-size: 1rem;
+    width: calc(100% - 70px);
+    outline: none;
+    background: none;
+}
+
+.search-bar div img{
+    float: right;
+    width: 14px;
+    margin: 8px 12px 0 0;
+}
+
+.cancel{
+    display: block;
+    line-height: 50px;
+    width: 60px;
+    text-align: center;
+    color: #333333;
+    font-size: 13px;
+}
+
+.content-flex{
+    background: #fff;
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 1px;
+    padding: 10px 15px;
+}
+
+.flex-1{
+    flex: 3;
+    text-align: left;
+    color: #333333;
+    font-size: 12px;
+}
+
+.flex-2{
+    flex: 4;
+    text-align: left;
+    font-weight: bold;
+    color: #333333;
+    font-size: 14px;
+}
+
+.flex-3{
+    flex: 2;
+    text-align: right;
+}
+
+.add-btn{
+    width: 33px;
+    height: 30px;
+}
+
+/* .add-btn:active{
+    background: #ccc;
+} */
+
+input::-webkit-input-placeholder { 
+    font-weight: bold;
+    color: #8B8F9B; 
+    font-size: 11px;
+} 
+input:-moz-placeholder { 
+    font-weight: bold;
+    color: #8B8F9B; 
+    font-size: 11px;
+} 
+input::-moz-placeholder { 
+    font-weight: bold;
+    color: #8B8F9B; 
+    font-size: 11px;
+} 
+input:-ms-input-placeholder { 
+    font-weight: bold;
+    color: #8B8F9B; 
+    font-size: 11px;
+} 

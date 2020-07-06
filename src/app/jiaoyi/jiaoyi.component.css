@@ -1,0 +1,92 @@
+.content{
+    margin-bottom: 50px;
+    height: calc(100vh - 133px);
+    overflow-y: auto;
+}
+
+.progressBox {
+    padding-top: 20px;
+    background-color: #fff;
+    padding-bottom: 40px;
+}
+
+#myProgress {
+    width: 90vw;
+    margin-left: 5vw;
+    height: 6px;
+    background-color: #6B8AB0;
+    position: relative;
+    border-radius: 3px;
+}
+
+#data1 {
+    height: 6px;
+    background-color: #C80005;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    left: 0px;
+    z-index: 2000;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#data2 {
+    height: 6px;
+    background-color: #FFB954;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    left: 0px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.p1 {
+    float: left;
+    font-size: 12px;
+    width: auto;
+    margin-left: 20px;
+    margin-top: 8px;
+    color: #8E9399;
+}
+
+.p1 .s1 {
+    color: #C80005;
+}
+
+.p2 {
+    float: left;
+    position: absolute;
+    font-size: 12px;
+    width: auto;
+    margin-left: 20px;
+    margin-top: -24px;
+    color: #8E9399;
+}
+
+.p2 .s2 {
+    color: #FFB954
+}
+
+.zong {
+    float: right;
+    margin-right: 5vw;
+    font-size: 12px;
+    margin-top: 8px;
+    color: #8E9399;
+}
+
+.zong .s3 {
+    color: #6B8AB0;
+}
+#yuan {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #6B8AB0;
+    position: absolute;
+    right: -5px;
+    top: -2.5px;
+    z-index:10000;
+}

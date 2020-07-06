@@ -1,0 +1,137 @@
+<div class="chedang-big-div">
+  <div class="chedang-div">
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 kyzj2"></div>
+        <p class="name">
+          可用资金
+        </p>
+      </span>
+      <p class="sp">
+        {{userInfo.ableScale | round4}}
+      </p>
+    </div>
+    <span class="chedan-line"></span>
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 djzj2"></div>
+        <p class="name">
+          冻结资金
+        </p>
+      </span>
+      <p class="sp1">
+        {{freezaFee | round4}}
+      </p>
+    </div>
+  </div>
+  <div class="chedang-div">
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 gpsz2"></div>
+        <p class="name">
+          总资产
+        </p>
+      </span>
+      <p class="sp">
+        {{userInfo.totalScale | round4}}
+      </p>
+    </div>
+    <span class="chedan-line"></span>
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 kyzj4"></div>
+        <p class="name">
+          持仓权益
+        </p>
+      </span>
+      <p class="sp1">
+        {{userInfo.stockScale | round4}}
+      </p>
+    </div>
+  </div>
+</div>
+<div class="cclb">
+  <table cellspacing="0">
+    <tr>
+      <td>
+        名称/代码
+      </td>
+      <td>
+        委托/均价
+      </td>
+      <td>
+        委托/成交量
+      </td>
+      <td>
+        时间/状态
+      </td>
+    </tr>
+    <tr (click)='chedan(a)' *ngFor='let a of list'>
+      <td style="text-align: left;padding-left: 24px;position: relative;">
+        <!-- <span class="span {{a.appointType == 2?'blue':''}}">{{a.appointType == 1?'买':'卖'}}</span> -->
+        <img src="./assets/images/buy.png" *ngIf="a.appointType === 1" class="buy-sell" />
+        <img src="./assets/images/sell.png" *ngIf="a.appointType === 2" class="buy-sell" />
+        <p style="font-weight:bold;font-size:14px;">
+          {{a.stockName}}
+        </p>
+        <p style="color: #333333; font-size: 10px;">
+          {{a.stockCode}}
+        </p>
+      </td>
+      <td>
+        <p>
+          {{a.appointPrice}}
+        </p>
+        <p>
+          {{a.dealAvrPrice}}
+        </p>
+      </td>
+      <td>
+        <p>
+          {{a.appointCnt}}
+        </p>
+        <p>
+          {{a.dealCnt}}
+        </p>
+      </td>
+      <td>
+        <p>
+          {{a.appointTime}}
+        </p>
+        <p>
+          {{a.appointStatusDesc}}
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+<div class="submit-alert" *ngIf='submitAlert'>
+  <div class="alert-div">
+    <p>
+      确认撤单
+    </p>
+    <p>
+      名&emsp;&emsp;称：
+      <span>{{orderData.stockName}}</span>
+    </p>
+    <p>
+      代&emsp;&emsp;码：
+      <span>{{orderData.stockCode}}</span>
+    </p>
+    <p>
+      撤单数量：
+      <span>{{orderData.appointCnt - orderData.dealCnt}}</span>
+    </p>
+    <p>
+      委托价格：
+      <span>{{orderData.appointPrice}}</span>
+    </p>
+    <button class="submit-btn" (click)='submitChedan()'>
+      撤{{type}}单
+    </button>
+    <br>
+    <button class="cancel-btn" (click)='closeAlert()'>
+      取消
+    </button>
+  </div>
+</div>

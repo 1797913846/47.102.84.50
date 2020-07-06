@@ -1,0 +1,93 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">策略</p>
+</div>
+<!-- <div class="tabs">
+  <div (click)='selectType(item.id,item.money)' *ngFor="let item of typeList" [class]="item.id==type?'tabsActive':''">
+    <div class='icon {{item.class}}'></div>
+    <p>
+      {{item.text}}
+    </p>
+  </div>
+</div> -->
+<div class="strategy-tabs">
+  <div *ngFor="let item of typeList" (click)='selectType(item.id,item.money)' [class]="item.id==type?'tabsActive':'tabsbox'">
+    <!-- <div class="num">{{item.num}}</div>
+    <div class="interest">{{item.date}}利息{{item.money}}元</div> -->
+    <!-- <div class="num"></div><br /> -->
+    <div class="interest">按使用金额计息</div>
+    <div class="amount-num">{{item.amount}}元起</div>
+    <!-- <div>—</div> -->
+  </div>
+</div>
+<div class="zixuan-content">
+  <div class="tabs2">
+    <div (click)='tabs = 0' [class]="tabs == 0?'tabs2-active':''">
+      申请操盘
+    </div>
+    <div (click)='tabs = 1' [class]="tabs == 1?'tabs2-active':''">
+      我的持仓
+    </div>
+  </div>
+  <div class='tab-content' *ngIf="tabs == 0">
+    <div class="money">
+      <p>
+        投入本金
+      </p>
+      <input type="number" [(ngModel)]="money">
+    </div>
+    <div class='flex-btn' *ngIf="userInfo.allottedScale !== '0'">
+      <button (click)='add(true)'>增配</button>
+      <button (click)='add(false)'>非增配</button>
+    </div>
+    <p class='p-first'>
+      请选择方案
+    </p>
+    <div class='multiple-div {{detail.length == 1?"singleDiv":""}}'>
+      <ng-container *ngFor="let item of detail">
+        <div (click)='goto(item.id,item.mul,item.financeFeeRate)' class="multiple-item" [ngClass]="mulType == item.mul?'multiple-active':''">
+          <!-- <div class="title">放大倍数</div> -->
+          <span class="multiple-box">{{item.mul}}
+            <span class="several-times">&nbsp;倍</span>
+          </span>
+          <p>{{amount(item.mul)}}
+            <span class="multiple-unit">万元</span>
+          </p>
+          <!-- <p>{{manageFeeFn(item.mul,item.financeFeeRate)}} -->
+          <!-- <p>{{manageFeeFn1(item.mul,item.makeFeeRate)}} -->
+          <!-- <span class="multiple-unit">元/{{dateType[type]}}</span> -->
+          <!-- <span class="multiple-unit">元/仓</span> -->
+          <!--这个是50环境的客户不要的 <p>建仓费率：{{addNum(item.makeFeeRate)}}%<br />管理费率：{{addNum(item.financeFeeRate)}}%</p> -->
+          <!-- <img src="./assets/images/strategy_search.png" class="strategy-search" /> -->
+        </div>
+      </ng-container>
+      <!-- <div (click)='goto(item.id,item.mul,item.financeFeeRate)' [class]="mulType == item.mul?'multiple-active':''" *ngFor="let item of detail">
+        <span class="multiple-box">{{item.mul}}
+          <span class="several-times">&nbsp;倍</span>
+        </span>
+        <p>{{amount(item.mul)}}万元</p>
+        <p>{{manageFeeFn(item.mul,item.financeFeeRate)}}元/{{dateType[type]}}</p>
+      </div> -->
+    </div>
+    <!-- <button *ngIf="userInfo.allottedScale !== '0'" class='submit' (click)='submit()'>
+      结案
+    </button> -->
+  </div>
+  <div class='tab-content' *ngIf="tabs == 1">
+    <app-chicang></app-chicang>
+  </div>
+</div>
+<div class="confirm" *ngIf="confirm">
+  <div>
+    <p class="title">
+      提示
+    </p>
+    <p class="content">
+      {{msgText}}
+    </p>
+    <p class='button'>
+      <button (click)='confirm=false;'>否</button>
+      <button (click)='ok()'>是</button>
+    </p>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="search-bar">
+  <div>
+    <img src="./assets/images/zixuan/close.png" alt="" (click)='clear()'>
+    <input (keyup)='getQuotation()' type="text" placeholder="搜索股票代码/首字母" [(ngModel)]='stockCode' maxlength="6" autofocus>
+  </div>
+  <span class="cancel" (click)='close()'>取消</span>
+</div>
+<div class="main-content">
+  <div class="content-flex" *ngFor='let a of list'>
+    <div class="flex-2" (click)='goto2(a.stockCode)'>
+      {{a.stockName}}
+    </div>
+    <div class="flex-1" (click)='goto2(a.stockCode)'>
+      {{a.stockCode}}
+    </div>
+    <div class="flex-3">
+      <!-- <div class="add-btn" (click)='add(a.stockCode)'>
+        添加
+      </div> -->
+      <img src="./assets/images/zixuan/search_add.png" class="add-btn" (click)='add(a.stockCode)'/>
+    </div>
+  </div>
+  <div style="width:100%;height:100px;"></div>
+</div>

@@ -1,0 +1,17 @@
+#qrcodeDiv {
+  padding: 30px;
+}
+
+#qrcodeDiv p {
+  color: #C80005;
+}
+
+#qrcode {
+  text-align: center;
+  width: 256px;
+  margin-left: 50%;
+  left: -128px;
+  position: relative;
+  height: 280px;
+  margin-top: 20px;
+}

@@ -1,0 +1,25 @@
+<div class="navigation">
+  交易
+</div>
+<div class="progressBox" *ngIf="data1">
+    <span class="p2">预警线<span class="s2">{{data2}}</span></span>
+    <div id="myProgress">
+      <div id="data1">
+      </div>
+      <div id="data2">
+      </div>
+      <div id="yuan"></div>
+    </div>
+    <span class="p1">平仓线<span class="s1">{{data1}}</span></span>
+    <span class="zong">总资产<span class="s3">{{data3}}</span></span>
+  </div>
+<div class="menuList">
+  <div *ngFor='let a of menuList' class="footer-div {{url === a.id?'footer-div-active':''}}" (click)='goto(a.id)'>
+    <p>
+      {{a.name}}
+    </p>
+  </div>
+</div>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

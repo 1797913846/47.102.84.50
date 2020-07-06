@@ -1,0 +1,22 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">设置</p>
+</div>
+<div class="list-item" (click)='userDetail()' [style.margin-top]="0">
+  <span>个人详情</span>
+  <img class="right-icon" src="./assets/images/right.png" alt="">
+</div>
+<div *ngIf="allottedScale !== '0'" class="list-item" (click)='submit()' >
+  <span>结案</span>
+</div>
+<div class="list-item" (click)='goto("resetPwd")'>
+  <span>修改密码</span>
+  <img class="right-icon" src="./assets/images/right.png" alt="">
+</div>
+<div class="list-item" (click)='goto("card")'>
+  <span>修改银行卡信息</span>
+  <img class="right-icon" src="./assets/images/right.png" alt="">
+</div>
+<div class="list-item" (click)='logout()'>
+  <span>注销</span>
+</div>

@@ -1,0 +1,77 @@
+<div class="navigation" *ngIf="!isJiaoyi">
+  <p class="navigation-title">资产</p>
+</div>
+<div class="progressBox" *ngIf="data1&&!isChicang">
+    <span class="p2">预警线
+      <span class="s2">{{data2}}</span>
+    </span>
+    <div id="myProgress">
+      <div id="data1">
+      </div>
+      <div id="data2">
+      </div>
+      <div id="yuan"></div>
+    </div>
+    <span class="p1">平仓线
+      <span class="s1">{{data1}}</span>
+    </span>
+    <span class="zong">总资产
+      <span class="s3">{{data3}}</span>
+    </span>
+  </div>
+<div class="chedang-big-div">
+  <!-- <div [class]='url == "/main/chicang"?"chedang-div-active":"chedang-div"'> -->
+  <div class="chedang-div">
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 kyzj2"></div>
+        <p class="name">
+          可用资金
+        </p>
+      </span>
+      <p class="sp">
+        {{userInfo.ableScale | round4}}
+      </p>
+    </div>
+    <span class="chedan-line"></span>
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 djzj2"></div>
+        <p class="name">
+          冻结资金
+        </p>
+      </span>
+      <p class="sp1">
+        {{freezaFee | round4}}
+      </p>
+    </div>
+  </div>
+  <div class="chedang-div">
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 gpsz2"></div>
+        <p class="name">
+          总资产
+        </p>
+      </span>
+      <p class="sp">
+        {{userInfo.totalScale | round4}}
+      </p>
+    </div>
+    <span class="chedan-line"></span>
+    <div class="chedan">
+      <span class="cSpan">
+        <div class="icon4 kyzj4"></div>
+        <p class="name">
+          持仓权益
+        </p>
+      </span>
+      <p class="sp1">
+        {{userInfo.stockScale | round4}}
+      </p>
+    </div>
+  </div>
+</div>
+<div [class]="overflow(isJiaoyi)">
+  <app-cclb></app-cclb>
+</div>

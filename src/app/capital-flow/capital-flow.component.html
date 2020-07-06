@@ -1,0 +1,45 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">资金流水</p>
+</div>
+<div class="date-div">
+  <span>查询日期</span>
+  <input type="date" name="" id="" (change)='change()' [(ngModel)]="startDate">
+  <span class="date-span">{{startDate}}</span>
+  <span>-</span>
+  <input type="date" name="" id="" (change)='change()' [(ngModel)]="endDate">
+  <span class="date-span">{{endDate}}</span>
+</div>
+<div class="flow-content">
+  <div class="flow-list" *ngFor="let item of list">
+    <!-- <div class="flow-icon">
+      <span [class]="item.totalAmount>=0?'':'blueBorder'">{{item.orderTypeDesc}}</span>
+    </div> -->
+    <div>
+      <p style="color:#C80005;">
+        <span>
+          {{item.orderTypeDesc}}
+        </span>
+        <span style="margin-right:10px;color:#333;margin-left: 20px;">
+          {{item.sourceTypeDesc}}
+        </span>
+        <span [class]="item.totalAmount>=0?'':'blue'">
+          {{item.totalAmount>0?'+':''}}{{item.totalAmount}}
+        </span>
+        <span class="status" [class]="color(item.auditResult)">{{item.auditResultDesc}}</span>
+      </p>
+      <p>
+        {{item.payeeInfo}}
+      </p>
+      <p *ngIf="item.fundStreamType == 1">
+        备注：{{item.remark}}
+      </p>
+      <p>
+        {{item.createTime}}
+      </p>
+      <p class="red" *ngIf="item.auditResult == -1">
+        备注：{{item.remark}}
+      </p>
+    </div>
+  </div>
+</div>

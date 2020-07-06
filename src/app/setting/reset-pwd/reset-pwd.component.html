@@ -1,0 +1,27 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">修改密码</p>
+</div>
+<div class="cell-list">
+  <div class="list-item">
+    <span class="span-title">
+      旧密码
+    </span>
+    <input placeholder="请输入旧密码" maxlength="30" type="password" [(ngModel)]="oldPwd">
+  </div>
+  <div class="list-item">
+    <span class="span-title">
+      新密码
+    </span>
+    <input placeholder="6到12位的数字或字母" maxlength="30" type="password" [(ngModel)]="newPwd">
+  </div>
+  <div class="list-item">
+    <span class="span-title">
+      确认密码
+    </span>
+    <input placeholder="请再次输入新密码" maxlength="30" type="password" [(ngModel)]="newPwd2">
+  </div>
+</div>
+<div class="bottom-btn" style="margin-top:20px;">
+  <div class="main" (click)='submit()'>确定</div>
+</div>

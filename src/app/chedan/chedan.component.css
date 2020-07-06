@@ -1,0 +1,281 @@
+.icon4 {
+    height: 21px;
+    width: 21px;
+    float: left;
+    background-size: 100%;
+}
+
+.djzj2 {
+    background: url('../../assets/images/icon1.png') no-repeat;
+    background-size: 100%;
+    margin-left: 30px;
+}
+
+.gpsz2 {
+    background: url('../../assets/images/icon3.png') no-repeat;
+    background-size: 100%;
+}
+
+.kyzj2 {
+    background: url('../../assets/images/icon2.png') no-repeat;
+    background-size: 100%;
+}
+
+.kyzj4 {
+    background: url('../../assets/images/icon4.png') no-repeat;
+    background-size: 100%;
+    margin-left: 30px;
+}
+
+.chedang-big-div {
+    background-color: #ffffff;
+    /* padding-top: 10px; */
+    box-sizing: border-box;
+}
+
+.chedang-div {
+    background: #fff;
+    text-align: center;
+    display: flex;
+    padding: 26px 0;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.chedang-div:first-child {
+    border-bottom: solid 1px #efefef;
+}
+
+.chedang-div .chedan-line {
+    width: 1px;
+    height: 32px;
+    background-color: #f6f6f6;
+    margin-top: 5px;
+}
+
+.chedang-div .chedan span {
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+}
+
+.chedang-div div {
+    flex: 1;
+}
+
+.chedang-div div p {
+    color: #C80005;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.chedang-div div .name {
+    font-size: 15px;
+    color: #5B5F65;
+    float: left;
+    margin-left: 10px;
+}
+
+.chedang-div .cSpan {
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.chedang-div .sp {
+    float: right;
+    text-align: right;
+    width: 80%;
+    margin-right: 46px;
+}
+
+.chedang-div .sp1 {
+    float: right;
+    text-align: right;
+    width: 80%;
+    margin-right: 16px;
+}
+
+.chedang-div-active {
+    background: #fff;
+    text-align: center;
+    display: flex;
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 5px 0px 26px 0px;
+}
+
+.chedang-div-active:first-child {
+    border-bottom: solid 1px #efefef;
+}
+
+.chedang-div-active .chedan-line {
+    width: 1px;
+    height: 32px;
+    background-color: #f6f6f6;
+    margin-top: 5px;
+}
+
+.chedang-div-active .chedan span {
+    display: inline-block;
+    float: left;
+    margin-left: 20px;
+}
+
+.chedang-div-active div {
+    flex: 1;
+}
+
+.chedang-div-active div p {
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.chedang-div-active div .name {
+    font-size: 12px;
+    color: #8E9399;
+}
+
+.cclb {
+    background: #fff;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.cclb table {
+    width: 100%;
+    text-align: center;
+    color: #333333;
+    font-size: 12px;
+}
+
+.cclb table tr {
+    height: 60px;
+}
+
+.cclb table tr:first-child {
+    height: 40px;
+    color: #5B5F65;
+}
+
+.cclb table tr:nth-child(2n) {
+    background-color: #F9F9F9
+}
+
+.buy-sell {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+}
+
+.span {
+    float: left;
+    margin-top: 14px;
+    font-size: .7rem;
+    display: block;
+    border: solid 1px #C80005;
+    border-radius: 50px;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    margin-left: 2px;
+    color: #C80005;
+    margin-right: 2px;
+}
+
+.blue {
+    color: #C80005 !important;
+    border: solid 1px #C80005 !important;
+}
+
+.progressBox {
+    padding-top: 23px;
+    background-color: #fff;
+    padding-bottom: 40px;
+}
+
+#myProgress {
+    width: 90vw;
+    margin-left: 5vw;
+    height: 6px;
+    background-color: #6B8AB0;
+    position: relative;
+    border-radius: 3px;
+}
+
+#data1 {
+    height: 6px;
+    background-color: #C80005;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    left: 0px;
+    z-index: 2000;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+#data2 {
+    height: 6px;
+    background-color: #FFB954;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    left: 0px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+
+.p1 {
+    float: left;
+    font-size: 12px;
+    width: auto;
+    margin-left: 20px;
+    margin-top: 8px;
+    color: #8E9399;
+}
+
+.p1 .s1 {
+    color: #C80005;
+}
+
+.p2 {
+    float: left;
+    position: absolute;
+    font-size: 12px;
+    width: auto;
+    margin-left: 20px;
+    margin-top: -24px;
+    color: #8E9399;
+}
+
+.p2 .s2 {
+    color: #FFB954
+}
+
+.zong {
+    float: right;
+    margin-right: 5vw;
+    font-size: 12px;
+    margin-top: 8px;
+    color: #8E9399;
+}
+
+.zong .s3 {
+    color: #6B8AB0;
+}
+
+#yuan {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #6B8AB0;
+    position: absolute;
+    right: -5px;
+    top: -2.5px;
+    z-index:10000;
+}

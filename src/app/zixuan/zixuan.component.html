@@ -1,0 +1,51 @@
+<div class="navigation">
+  <div class="edit" (click)='edit()'>编辑</div>
+  <p class="navigation-title">自选</p>
+  <img src="./assets/images/zixuan/search.png" alt="" class="search" (click)='goto()'>
+</div>
+<div class="tabs zixuan-tabs">
+  <div class="tabs-div2 " *ngFor="let item of tablist">
+    <p>{{item.preClosePrice}}</p>
+    <p [class]="color(item.upRatio)">{{item.lastPrice}}</p>
+    <p [class]="color(item.upRatio)">{{item.upRatio}}</p>
+    <p>{{item.stockName}}</p>
+  </div>
+</div>
+<div class="notempty cclb">
+  <div>
+    <div class="table-flex">
+      <div class="name-code">名称/代码</div>
+      <div>最新</div>
+      <div>涨跌</div>
+      <div class="upRatio">涨幅</div>
+    </div>
+  </div>
+  <div class="empty" *ngIf='!hasZixuan'>
+    <img src="./assets/images/zixuan/cartoon.png" alt="" class="cartoon">
+    <p class="text">您尚未添加任何对象...</p>
+    <div (click)='goto()' class="addZixuan"> + 添加自选股</div>
+  </div>
+  <div class="zixuan-list" *ngIf='hasZixuan'>
+    <div class="table-flex2" [@showDelete]="show" *ngFor='let a of list'>
+      <div class="delete-box">
+        <!-- <a class="delete-btn" (click)='del(a.stockCode)'></a> -->
+        <div class="delete-btn" (click)='del(a.stockCode)'>
+          <div class="jian-hao"></div>
+        </div>
+      </div>
+      <div (click)='goto2(a.stockCode)' class="name-code">
+        <div class="stock-name">{{a.stockName}}</div>
+        <div class="stock-code">{{a.stockCode}}</div>
+      </div>
+      <div (click)='goto2(a.stockCode)' class="last-price">
+        {{a.lastPrice | toFixed}}
+      </div>
+      <div (click)='goto2(a.stockCode)' class="{{fontColor(a.diff)}} diff">
+        {{a.diff}}
+      </div>
+      <div (click)='goto2(a.stockCode)' class="{{fontColor(a.upRatio)}} upRatio">
+        {{a.upRatio}}
+      </div>
+    </div>
+  </div>
+</div>

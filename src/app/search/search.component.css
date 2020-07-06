@@ -1,0 +1,33 @@
+.cclb {
+  background: #fff;
+  margin-top: 1px;
+  margin-bottom:30px;
+}
+
+.cclb table {
+  width: 100%;
+  text-align: center;
+  color: #333333;
+  font-size: 12px;
+}
+
+.cclb table tr{
+  height: 60px;
+}
+
+.cclb table tr:first-child{
+  height: 40px;
+  color:#5B5F65;
+}
+
+.cclb table tr:nth-child(2n) {
+  background-color: #F9F9F9
+}
+
+.buy-sell {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+}

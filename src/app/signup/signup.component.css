@@ -1,0 +1,82 @@
+.login-input input {
+  height: 28px;
+  background: none;
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 1rem;
+  width: calc(100% - 60px);
+  margin-left: 10px;
+  color:#8B8F9B;
+}
+.login-input input::-webkit-input-placeholder{
+  color:#8B8F9B;
+}
+.login-input .icon {
+  background: url(../../assets/images/zhuce-icon.png) no-repeat;
+  float: left;
+  width: 30px;
+  height: 30px;
+  margin-top: 4px;
+  margin-left: 6px;
+  background-size: 100% 500%;
+}
+
+.code {
+  background-position-y: -60px !important;
+}
+
+.password {
+  background-position-y: -30px !important;
+}
+
+.inviteCode {
+  background-position-y: -90px !important;
+}
+
+.name{
+  background-position-y: -120px !important;
+}
+
+
+.bottom-div {
+  background: #fff;
+  width: 70%;
+  height: 20px;
+  position: relative;
+  margin-left: 15%;
+  box-shadow: 0px 0px 15px 5px rgba(76, 76, 76, 0.16);
+  margin-top: -4px;
+
+}
+
+.signup-div {
+  text-align: center;
+  font-size: .9rem;
+  color: #8B8F9B;
+  margin-top: 20px;
+}
+
+.code-input{
+  width: calc(100% - 160px) !important;
+}
+
+.code-btn{
+  float: right;
+  width: 94px;
+  height: 30px;
+  background: #C80005;
+  border: solid 1px #C80005;
+  color: #fff;
+  margin-top: 4px;
+}
+
+.book{
+  font-size: 12px;
+  margin-top: 20px;
+  margin-left: 15px;
+}
+
+.book a{
+  color: #C80005;
+}

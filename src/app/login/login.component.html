@@ -1,0 +1,17 @@
+<div class="login-div">
+  <div class="input-div">
+    <p class="title">欢迎登录</p>
+    <p class="smalltitle">Welcome to login</p>
+    <div class="login-input">
+      <input type="text" placeholder="请输入账号" [(ngModel)]='phone'>
+    </div>
+    <div class="login-input">
+      <input type="password" placeholder="请输入密码" [(ngModel)]='password'>
+    </div>
+    <button class="login-btn" (click)='login()'>登录</button>
+    <div class="signup-div">
+      <span (click)='goto("signup")'>新用户注册</span>
+      <span (click)='goto("forget")'>忘记密码？</span>
+    </div>
+  </div>
+</div>

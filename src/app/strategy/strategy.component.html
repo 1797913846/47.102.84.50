@@ -1,0 +1,101 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">策略</p>
+</div>
+<div>
+  <div class="banner">
+    <p>
+      操盘资金
+    </p>
+    <p>
+      {{info.cpje}}.00
+    </p>
+    <img src="./assets/images/banner4.png" alt="">
+
+  </div>
+  <div class="content">
+    <div class="cell-list">
+      <div class="list-item">
+        <span class="list-item-name">
+          {{isAdd == 'true'?'新增':''}}保证金
+        </span>
+        <span class="list-item-content">
+          {{info.bzj}}元
+        </span>
+      </div>
+      <div class="list-item">
+        <span class="list-item-name">
+          建仓费
+        </span>
+        <span class="list-item-content">
+          {{info.fwf}}元
+        </span>
+      </div>
+      <div class="list-item">
+        <span class="list-item-name">
+          建仓费率
+        </span>
+        <span class="list-item-content">
+          {{addNum(makeFeeRate)}}%
+        </span>
+      </div>
+      <div class="list-item">
+        <span class="list-item-name">
+          管理费率
+        </span>
+        <span class="list-item-content">
+          {{addNum(financeFee)}}%
+        </span>
+      </div>
+      <div class="list-item" *ngIf="strategyType !== '0'">
+        <span class="list-item-name">
+          本{{strategyType === '1'?'周':'月'}}管理费
+        </span>
+        <span class="list-item-content">
+          {{manageFee}}元
+        </span>
+      </div>
+      <div class="list-item" (click)='alert(0)'>
+        <span class="list-item-name">
+          警戒线
+          <img src="./assets/images/wenhao.png" alt="">
+        </span>
+        <span class="list-item-content">
+          {{info.jjje}}元
+        </span>
+      </div>
+      <div class="list-item" (click)='alert(1)'>
+        <span class="list-item-name">
+          平仓线
+          <img src="./assets/images/wenhao.png" alt="">
+        </span>
+        <span class="list-item-content">
+          {{info.zsje}}元
+        </span>
+      </div>
+      <div class="list-item">
+        <span class="list-item-name">
+          开始交易
+        </span>
+        <span class="list-item-content">
+          {{info.tradeDay}}
+        </span>
+      </div>
+      <div class="list-item" (click)='chicang()'>
+        <span class="list-item-name">
+          持仓限制
+        </span>
+        <img class="right-icon" src="./assets/images/right.png" alt="">
+      </div>
+      <div class="list-item">
+        <div class="list-item-content" style='color:#C80005'>
+          <input type="checkbox" name="" id="" [checked]='agreement' [(ngModel)]="agreement">
+          <span (click)='attention()'>已阅读并同意《操盘规则》</span>
+        </div>
+      </div>
+    </div>
+    <button class='submit' (click)='submit()'>
+      立即申请
+    </button>
+  </div>
+</div>

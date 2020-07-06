@@ -1,0 +1,15 @@
+<div class="navigation">
+  <div class="back" (click)='back()'></div>
+  <p class="navigation-title">资讯详情</p>
+</div>
+<div id="content">
+  <div class="title">
+    {{title}}
+  </div>
+  <div class="date">
+    日期：{{date}}
+  </div>
+  <div [innerHtml]='html'>
+
+  </div>
+</div>

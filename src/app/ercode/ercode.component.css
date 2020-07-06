@@ -1,0 +1,7 @@
+.ercode {
+    padding-top: 100px;
+    padding-bottom: 500px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}

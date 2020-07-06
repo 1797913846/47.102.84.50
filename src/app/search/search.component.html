@@ -1,0 +1,61 @@
+<div class="date-div">
+  <span>查询日期</span>
+  <input type="date" name="" id="" (change)='change()' [(ngModel)]="date">
+  <span class="date-span" >{{date}}</span>
+</div>
+<div class="cclb">
+  <table cellspacing="0">
+    <tr>
+      <td>
+        名称/代码
+      </td>
+      <td>
+        标志/时间
+      </td>
+      <td>
+        委托/成交价
+      </td>
+      <td>
+        委托/成交量
+      </td>
+    </tr>
+    <tr *ngFor='let a of list' (click)='goto(a)'>
+      <td style="text-align: left;padding-left: 24px;position: relative;">
+        <!-- <span class="span {{a.appointType == '2'?'blue':''}}">{{a.appointType === 1?'买':'卖'}}</span> -->
+        <img src="./assets/images/buy.png" *ngIf="a.appointType === 1" class="buy-sell"/>
+        <img src="./assets/images/sell.png" *ngIf="a.appointType === 2" class="buy-sell"/>
+        <p style="font-weight:bold;font-size:14px;">
+          {{a.stockName}}
+        </p>
+        <p style="color: #333333; font-size: 10px;">
+          {{a.stockCode}}
+        </p>
+      </td>
+      <td>
+        <p>
+          {{a.appointStatusDesc}}
+        </p>
+        <p>
+          {{a.appointTime}}
+        </p>
+      </td>
+      <td>
+        <p>
+          {{a.appointPrice | round4}}
+        </p>
+        <p>
+          {{a.dealAvrPrice| round4}}
+        </p>
+      </td>
+      <td>
+        <p>
+          {{a.appointCnt}}
+        </p>
+        <p>
+          {{a.dealCnt}}
+        </p>
+      </td>
+    </tr>
+  </table>
+</div>
+
