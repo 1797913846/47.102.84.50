@@ -21,6 +21,12 @@ export class IndexComponent implements OnInit, OnDestroy {
     id: 0,
     text: '日进斗金'
   }];
+  /**
+   * , {
+    id: 2,
+    text: '月中折桂'
+  }
+   */
   detail = [{
     img: './assets/images/banner1.png',
     btn: './assets/images/btn1.png',
@@ -36,7 +42,23 @@ export class IndexComponent implements OnInit, OnDestroy {
     btns: 'btn1',
     text1: '日进斗金'
   }];
-
+  /**
+   * , {
+    img: './assets/images/banner1.png',
+    btn: './assets/images/btn1.png',
+    id: 2,
+    num: 'NO.3',
+    amount: '1000',
+    multiple: '8',
+    date: '月',
+    money: '60',
+    money2: '元',
+    text: '一个月',
+    style: 'span3',
+    btns: 'btn1',
+    text1: '月中折桂'
+  }
+   */
   maxMul: 0;
   minMul: 0;
   logo = '';

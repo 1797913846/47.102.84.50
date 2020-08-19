@@ -1,34 +1,23 @@
 <div class="login-div" style="padding-bottom:40px;">
   <div class="input-div">
-    <p class="title">{{type == 'signup'?'注册':'找回密码'}}</p>
-    <p class="smalltitle">Welcome to {{type == 'signup'?'signup':'retrieve password'}}</p>
-    <div class="login-input " *ngIf="type == 'signup'">
-      <input type="text" placeholder="姓名" maxlength="11" [(ngModel)]='userName'>
-    </div>
-    <div class="login-input">
+    <p class="title">{{type == 'signup'?'':'找回密码'}}</p>
+    <p class="smalltitle" *ngIf="type != 'signup'">Welcome to retrieve password</p>
+    <div class="login-input" *ngIf="type != 'signup'">
       <input type="text" placeholder="手机号码" maxlength="11" [(ngModel)]='phone'>
     </div>
-    <div class="login-input">
+    <div class="login-input" *ngIf="type != 'signup'">
       <input class="code-input" type="text" placeholder="验证码" [(ngModel)]='code'>
-      <button class="code-btn" (click)='getCode()' [disabled]='time != 60'>
+      <button class="code-btn" (click)='getCode()' [disabled]='time != 60' *ngIf="type != 'signup'">
         {{text}}
       </button>
     </div>
-    <div class="login-input">
+    <div class="login-input" *ngIf="type != 'signup'">
       <input type="password" placeholder="密码" [(ngModel)]='password'>
     </div>
-    <!--183环境的不要的 <div class="login-input" *ngIf="type == 'signup'">
-      <input type="text" placeholder="邀请码" [(ngModel)]='inviteCode'>
-    </div> -->
-    <div class="login-input" *ngIf="type == 'signup'">
-      <input type="text" placeholder="邀请码" [(ngModel)]='inviteCode'>
-    </div>
-    <p class="book" *ngIf="type == 'signup'">
-      注册即视为同意：《 <a (click)='book()'>风险揭示书</a> 》
-    </p>
-    <button class="login-btn" (click)='submit()'>{{type == 'signup'?'注册':'确定'}}</button>
-    <div class="signup-div" *ngIf="type == 'signup'">
-      <span (click)='goto()'>已有账号？去登录</span>
-    </div>
+    <button class="login-btn" (click)='submit()' *ngIf="type != 'signup'">确定</button>
+  </div>
+  <div *ngIf="type == 'signup'">
+    <img src="./assets/images/car.png" class="right-icon" alt="" style="width:60%;margin-left:20%;margin-top:30%;">
+    <div style="color:rgb(145, 144, 144);font-size:12px;text-align: center;margin-top:40px;">系统已迁移，请联系您的代理商...</div>
   </div>
 </div>

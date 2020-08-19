@@ -974,6 +974,18 @@ table td p {
     outline: none;
 }
 
+.login-btn1 {
+    width: 100%;
+    height: 35px;
+    background: #ccc;
+    border: none;
+    color: #fff;
+    font-size: 19px;
+    height: 45px;
+    margin-top: 20px;
+    outline: none;
+}
+
 .login-btn:active {
     background: #C80005;
 }

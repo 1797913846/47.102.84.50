@@ -38,6 +38,14 @@ export class DepositComponent implements OnInit, OnDestroy {
     text: '天天赢',
     class: 'tty',
     amount: 1000
+  }, {
+    id: 2,
+    num: 'NO.3',
+    date: '月',
+    money: '60',
+    text: '月月赚',
+    class: 'yyz',
+    amount: 1000
   }];
   type = 0;
   mulType = 8;
@@ -179,6 +187,7 @@ export class DepositComponent implements OnInit, OnDestroy {
     return num * 100
   }
   selectType(id, money) {
+    console.log('我是id', id);
     if (this.userInfo.allottedScale === '0') {
       this.type = id;
       if (id === 0) {

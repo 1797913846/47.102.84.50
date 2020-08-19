@@ -25,6 +25,11 @@ export class StrategyComponent implements OnInit {
   financeFee = 0;
   makeFeeRate = 0;
   isAdd: any;
+
+  time: number = 3;
+  isTime: any = false;
+  timeS: any;
+
   financeData = [];
   dayType = ['day', 'week', 'month'];
   constructor(public data: DataService, public http: HttpService) {
@@ -149,41 +154,57 @@ export class StrategyComponent implements OnInit {
   }
 
   getLiftAmount() {
-    this.http.userCenter().subscribe(res => {
-      this.leftMoney = res['balance'];
-      let expandScale = true;
-      if (res['allottedScale'] === '0') {
-        this.info.cpje = parseInt(res['allottedScale'], 0) + this.info.cpje;
-        expandScale = true;
-      } else if (this.isAdd === 'true') {
-        expandScale = true;
-      } else {
-        expandScale = false;
-      }
+    this.isTime = true;
+    let that = this;
+    if (this.time > 0) {
+      this.timeS = setInterval(function () {
+        that.time = that.time - 1;
+        console.log('我啊', that.time);
+      }, 1000);
+    } else {
+      this.time = 3
+      clearInterval(that.timeS);
+      this.isTime = false;
+    }
+    if (this.time == 3) {
+      this.http.userCenter().subscribe(res => {
+        this.leftMoney = res['balance'];
+        let expandScale = true;
+        if (res['allottedScale'] === '0') {
+          this.info.cpje = parseInt(res['allottedScale'], 0) + this.info.cpje;
+          expandScale = true;
+        } else if (this.isAdd === 'true') {
+          expandScale = true;
+        } else {
+          expandScale = false;
+        }
 
-      if (this.leftMoney < this.info.bzj) {
-        this.data.ErrorMsg('账户余额不足，请充值');
-        setTimeout(() => {
-          this.data.goto('recharge');
-        }, 1000);
-      } else {
-        const data = {
-          newStrategy: res['allottedScale'] !== '0' ? false : true,
-          financeRatio: this.peiziData.mulType,
-          financePeriod: this.dateText,
-          amount: this.peiziData.money,
-          expandScale: expandScale
-        };
-        this.http.deposit(data).subscribe(res2 => {
-          this.data.ErrorMsg('申请成功');
+        if (this.leftMoney < this.info.bzj) {
+          this.data.ErrorMsg('账户余额不足，请充值');
           setTimeout(() => {
-            history.back();
+            this.data.goto('recharge');
           }, 1000);
-        }, (err) => {
-          this.data.error = err.error;
-          this.data.isError();
-        });
-      }
-    });
+        } else {
+          const data = {
+            newStrategy: res['allottedScale'] !== '0' ? false : true,
+            financeRatio: this.peiziData.mulType,
+            financePeriod: this.dateText,
+            amount: this.peiziData.money,
+            expandScale: expandScale
+          };
+          this.http.deposit(data).subscribe(res2 => {
+            this.data.ErrorMsg('申请成功');
+            setTimeout(() => {
+              history.back();
+            }, 1000);
+          }, (err) => {
+            this.data.error = err.error;
+            this.data.isError();
+          });
+        }
+      });
+    } else {
+      this.data.ErrorMsg('请不要连续点击,1秒后再操作');
+    }
   }
 }

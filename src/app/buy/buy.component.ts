@@ -66,6 +66,10 @@ export class BuyComponent implements DoCheck, OnDestroy, OnInit {
     showChart = false; // 展示分时图
     showLine = false;
 
+    time: number = 3;
+    isTime: any = false;
+    timeS: any;
+
     chartTypeList = [{
         name: '分时',
         type: 'T1'
@@ -385,37 +389,53 @@ export class BuyComponent implements DoCheck, OnDestroy, OnInit {
      * 买入确认
      */
     submintBuy() {
-        let price;
-        if (this.namename == 'xj') {
-            price = this.appointPrice
-        } else if (this.namename == 'sj') {
-            if (this.classType === 'BUY') {
-                price = this.stockHQ.priceUplimit
-            } else {
-                price = this.stockHQ.priceDownlimit
-            }
+        this.isTime = true;
+        let that = this;
+        if (this.time > 0) {
+            this.timeS = setInterval(function () {
+                that.time = that.time - 1;
+                console.log('我啊', that.time);
+            }, 1000);
+        } else {
+            this.time = 3
+            clearInterval(that.timeS);
+            this.isTime = false;
         }
-        this.data.Loading(this.data.show);
-        const content = {
-            'stockCode': this.stockCode,
-            'appointCnt': this.appointCnt,
-            'appointPrice': price
-        };
-        this.http.order(this.classType, content, this.classType === 'BUY' ? 'OPEN' : 'CLOSE').subscribe((res: Response) => {
-            if (res['success']) {
-                this.data.ErrorMsg('委托已提交');
+        if (this.time == 3) {
+            let price;
+            if (this.namename == 'xj') {
+                price = this.appointPrice
+            } else if (this.namename == 'sj') {
+                if (this.classType === 'BUY') {
+                    price = this.stockHQ.priceUplimit
+                } else {
+                    price = this.stockHQ.priceDownlimit
+                }
+            }
+            this.data.Loading(this.data.show);
+            const content = {
+                'stockCode': this.stockCode,
+                'appointCnt': this.appointCnt,
+                'appointPrice': price
+            };
+            this.http.order(this.classType, content, this.classType === 'BUY' ? 'OPEN' : 'CLOSE').subscribe((res: Response) => {
+                if (res['success']) {
+                    this.data.ErrorMsg('委托已提交');
+                    this.closeAlert();
+                    this.clear();
+                }
+            }, (err) => {
+                this.data.error = err.error;
+                this.data.isError();
+                this.closeAlert();
+            }, () => {
+                this.data.Loading(this.data.hide);
                 this.closeAlert();
                 this.clear();
-            }
-        }, (err) => {
-            this.data.error = err.error;
-            this.data.isError();
-            this.closeAlert();
-        }, () => {
-            this.data.Loading(this.data.hide);
-            this.closeAlert();
-            this.clear();
-        });
+            });
+        } else {
+            this.data.ErrorMsg('请不要连续点击,1秒后再操作');
+        }
     }
 
     /**
