@@ -41,7 +41,7 @@
     "stompjs": "^2.3.3",
     "swiper": "^4.4.1",
     "ts-md5": "^1.2.4",
-    "xlsx": "^0.14.0",
+    "xlsx": "^0.17.0",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
